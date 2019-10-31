@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/ly_item"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="5dp">
+
+    <jp.co.miosys.aitec.views.widgets.SquareImageView
+        android:id="@+id/imv_thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/txt_image"
+        style="@style/text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="2017/12/31 14:40:22"
+        android:textColor="@color/white"
+        android:layout_margin="5dp"
+        android:textStyle="bold"
+        android:padding="5dp"
+        android:textSize="@dimen/horizontal_txt_size"/>
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="right"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn_close"/>
+
+    <jp.co.miosys.aitec.views.widgets.SquareImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+</FrameLayout>

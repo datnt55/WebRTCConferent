@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activities.SelectCompanyActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:theme="?attr/actionBarTheme"
+        app:title="会社コード"
+        app:titleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="50dp"
+        android:text="会社コードを入力してください。"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingTop="20dp"
+        android:background="@drawable/bg_btn_border2">
+
+        <EditText
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:singleLine="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:imeOptions="actionDone"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+
+            android:layout_marginBottom="40dp" />
+        <FrameLayout
+            android:id="@+id/btn_select"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="45dp"
+            android:elevation="5dp"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            android:onClick="onSelectCompany"
+            android:background="@color/colorPrimaryDark"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_marginTop="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txt_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=" 決定"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:visibility="invisible"
+                    android:layout_marginLeft="5dp"
+                    android:indeterminateTint="@color/white" />
+            </RelativeLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

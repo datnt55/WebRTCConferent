@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".kurento.VideoConferenceActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/biggest_gl_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+        <jp.co.miosys.aitec.views.widgets.GridLineView
+            android:id="@+id/layout_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-200dp"
+            android:layout_marginRight="-200dp"
+            android:layout_marginTop="-200dp"
+            android:layout_marginBottom="-200dp"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_magnified"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:shadowColor="@color/black_light"
+                android:shadowRadius="7"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btn_switch_camera"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/imv_switch"
+                android:visibility="gone"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="switchCamera" />
+
+            <ImageView
+                android:id="@+id/btn_grid_line"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:layout_toLeftOf="@+id/btn_switch_camera"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:onClick="enableGridLine"
+                android:padding="9dp"
+                android:visibility="gone"
+                android:src="@mipmap/btn_grid_on" />
+
+            <Spinner
+                android:id="@+id/spn_resolution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_spinner"
+                android:paddingRight="20dp"></Spinner>
+
+            <com.john.waveview.WaveView
+                android:id="@+id/wave_view"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/transparent"
+                app:above_wave_color="@android:color/white"
+                app:blow_wave_color="@android:color/white"
+                android:layout_alignParentBottom="true"
+                app:progress="70"
+                app:wave_height="large"
+                app:wave_hz="normal"
+                app:wave_length="little" >
+
+            </com.john.waveview.WaveView>
+
+            <TextView
+                android:id="@+id/txt_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/layout_controller"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:textSize="18sp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:layout_marginBottom="5dp"
+                android:text="" />
+
+            <FrameLayout
+                android:id="@+id/layout_controller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:layout_alignParentBottom="true">
+                <Button
+                    android:id="@+id/btn_capture"
+                    style="@style/text_title"
+                    android:layout_width="@dimen/call_btn_capture_width"
+                    android:layout_height="50dp"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/btn_capture"
+                    android:text="@string/call_activity_btn_capture" />
+
+                <Button
+                    android:id="@+id/btn_video"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="80dp"
+                    android:layout_toLeftOf="@+id/btn_voice"
+                    android:background="@mipmap/camera_on"
+                    android:visibility="invisible"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="enableVideo" />
+
+                <Button
+                    android:id="@+id/btn_voice"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="25dp"
+                    android:visibility="invisible"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:background="@drawable/ic_volume"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="enableAudio" />
+            </FrameLayout>
+            <jp.co.miosys.aitec.views.widgets.ProgressDialog
+                android:id="@+id/progress_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+            </jp.co.miosys.aitec.views.widgets.ProgressDialog>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_finish_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/start_finish_call"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:background="@mipmap/btn_cancel"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="hangUp" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_memo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            app:backgroundTint="@color/colorPrimary"
+            android:tint="@color/white"
+            app:elevation="5dp"
+            android:visibility="gone"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_speaker_notes"
+            android:onClick="startMemo" />
+    </RelativeLayout>
+</RelativeLayout>

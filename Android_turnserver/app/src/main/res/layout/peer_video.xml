@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/peer_container"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="2dp"
+    android:layout_height="212dp">
+
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/local_gl_surface_view"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="210dp"
+        android:visibility="visible">
+    </org.webrtc.SurfaceViewRenderer>
+
+    <TextView
+        android:id="@+id/main_participant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/gradient"/>
+    <TextView
+        android:id="@+id/txt_waiting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="connecting..."
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:id="@+id/img_volume"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:elevation="5dp"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/ic_mute" />
+
+</FrameLayout>
+

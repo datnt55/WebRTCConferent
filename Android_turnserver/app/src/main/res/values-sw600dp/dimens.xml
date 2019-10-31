@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[20171002] Ductx: #2702: Create dimens for tablet 7 inch -->
+
+<resources>
+    <!--For text-->
+    <dimen name="text_title">35sp</dimen>
+    <dimen name="text_content">28sp</dimen>
+
+    <!--Layout Header-->
+    <dimen name="header_height">75dp</dimen>
+
+    <!--Call activity-->
+    <dimen name="txt_res_margin">2dp</dimen>
+    <dimen name="txt_res_padding">15dp</dimen>
+    <dimen name="call_imb_flash_size">60dp</dimen>
+    <dimen name="call_imb_flash_margin">15dp</dimen>
+    <dimen name="call_btn_capture_width">270dp</dimen>
+    <dimen name="call_btn_capture_height">90dp</dimen>
+    <dimen name="call_btn_capture_margin">30dp</dimen>
+    <dimen name="call_btn_switch_size">75dp</dimen>
+    <dimen name="call_btn_switch_margin">15dp</dimen>
+    <dimen name="call_ly_res_margin">15dp</dimen>
+
+    <!--Connect activity-->
+    <dimen name="connect_txt_title_margin">20dp</dimen>
+    <dimen name="connect_txt_title_mar_top">30dp</dimen>
+    <dimen name="connect_txt_emergency_height">100dp</dimen>
+    <dimen name="connect_txt_emergency_title_size">46sp</dimen>
+    <dimen name="connect_txt_emergency_content_size">22sp</dimen>
+    <dimen name="connect_ly_main_margin">70dp</dimen>
+    <dimen name="connect_ly_main_mar_bot">250dp</dimen>
+    <dimen name="connect_imv_user_size">60dp</dimen>
+    <dimen name="connect_imv_online_size">15dp</dimen>
+    <dimen name="connect_btn_margin">15dp</dimen>
+    <dimen name="connect_btn_width">210dp</dimen>
+    <dimen name="connect_btn_height">75dp</dimen>
+
+    <!--Draw activity-->
+    <dimen name="draw_imv_padding">15dp</dimen>
+    <dimen name="draw_btn_height">75dp</dimen>
+    <dimen name="draw_btn_margin">8dp</dimen>
+    <dimen name="draw_spinner_width">120dp</dimen>
+    <dimen name="draw_spinner_height">45dp</dimen>
+    <dimen name="draw_spinner_imv_height">30dp</dimen>
+    <dimen name="draw_spinner_margin">15dp</dimen>
+    <dimen name="draw_spinner_padding">8dp</dimen>
+    <dimen name="draw_button_height">120dp</dimen>
+    <dimen name="draw_button_padding">15dp</dimen>
+
+    <!--ImageView activity-->
+    <dimen name="image_lv_height">60dp</dimen>
+    <dimen name="image_lv_mar_top">8dp</dimen>
+    <dimen name="image_imv1_width">15dp</dimen>
+    <dimen name="image_imv_main_margin">15dp</dimen>
+    <dimen name="image_btn_mar_bot">30dp</dimen>
+    <dimen name="image_btn_width">180dp</dimen>
+    <dimen name="image_btn_height">60dp</dimen>
+    <dimen name="image_btn_edit_size">75dp</dimen>
+    <dimen name="image_btn_edit_mar_top">180dp</dimen>
+    <dimen name="image_btn_edit_mar_right">15dp</dimen>
+
+    <!--Login activity-->
+    <dimen name="login_ly2_mar_top">30dp</dimen>
+    <dimen name="login_ly2_padding">30dp</dimen>
+    <dimen name="login_edt_height">60dp</dimen>
+    <dimen name="login_edt_margin">8dp</dimen>
+    <dimen name="login_edt_mar_bot">30dp</dimen>
+    <dimen name="login_edt_padding">15dp</dimen>
+    <dimen name="login_btn_width">225dp</dimen>
+    <dimen name="login_btn_height">75dp</dimen>
+
+    <!--Splash activity-->
+    <dimen name="splash_txt_title_size">45sp</dimen>
+    <dimen name="splash_txt_title_mar_bot">8dp</dimen>
+    <dimen name="splash_txt_content_margin">15dp</dimen>
+    <dimen name="splash_imv_logo_height">75dp</dimen>
+    <dimen name="splash_imv_logo_mar_bot">8dp</dimen>
+
+    <!--Show image Dialog-->
+    <dimen name="dialog_ly_main_padding">8dp</dimen>
+    <dimen name="dialog_line_mar_bot">15dp</dimen>
+    <dimen name="dialog_line_mar_top">8dp</dimen>
+    <dimen name="dialog_btn_margin">30dp</dimen>
+    <dimen name="dialog_btn_height">75dp</dimen>
+
+    <!--Horizontal item-->
+    <dimen name="horizontal_ly_width">270dp</dimen>
+    <dimen name="horizontal_ly_height">60dp</dimen>
+    <dimen name="horizontal_txt_mar_left">8dp</dimen>
+    <dimen name="horizontal_txt_size">24sp</dimen>
+    <dimen name="horizontal_btn_size">60dp</dimen>
+
+    <!--Color select item-->
+    <dimen name="color_ly_height">45dp</dimen>
+    <dimen name="color_ly_margin">3dp</dimen>
+    <dimen name="color_ly_pad_right">3dp</dimen>
+    <dimen name="color_ly_color_height">30dp</dimen>
+
+    <!--Contact select item-->
+    <dimen name="contact_ly_main_padding">15dp</dimen>
+    <dimen name="contact_imv_icon_size">60dp</dimen>
+    <dimen name="contact_txt_name_mar_left">75dp</dimen>
+
+    <!--Line select item-->
+    <dimen name="line_ly_height">45dp</dimen>
+
+    <!--PopUp calling-->
+    <dimen name="popup_ly_search_mar_top">30dp</dimen>
+    <dimen name="popup_imv_call_size">75dp</dimen>
+    <dimen name="popup_ly_btn_margin">75dp</dimen>
+    <dimen name="popup_btn_size">120dp</dimen>
+    <dimen name="popup_txt_mar_top">180dp</dimen>
+
+    <!--Icon common-->
+    <dimen name="btn_capture">18dp</dimen>
+    <integer name="login_ly_title_slide">500</integer>
+    <integer name="login_ly_login_slide">250</integer>
+    <integer name="draw_spinner_height">45</integer>
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[20170910] Ductx: #2663: Create layout for splash activity-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/ly_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/text_title"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/splash_txt_title_mar_bot"
+            android:gravity="center_horizontal"
+            android:text="@string/splash_activity_txt1"
+            android:textSize="@dimen/splash_txt_title_size"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/app_version"
+            style="@style/text_title"
+            android:text="@string/splash_activity_txt2"
+            android:textColor="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/login_ly2_mar_top"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="@dimen/login_ly2_padding">
+        <TextView
+            android:id="@+id/txt_company_name"
+            style="@style/text_content"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:textSize="24sp"
+            android:text=""
+            android:textColor="@color/colorPrimary"/>
+        <TextView
+            style="@style/text_content"
+            android:gravity="center_vertical"
+            android:text="@string/login_activity_txt_user"/>
+
+        <EditText
+            android:id="@+id/edt_user"
+            style="@style/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_edt_height"
+            android:layout_marginBottom="@dimen/login_edt_mar_bot"
+            android:layout_marginLeft="@dimen/login_edt_margin"
+            android:layout_marginRight="@dimen/login_edt_margin"
+            android:singleLine="true"
+            android:background="@drawable/edt_login"
+            android:padding="@dimen/login_edt_padding"
+            android:textColor="@color/white"/>
+
+        <TextView
+            style="@style/text_content"
+            android:gravity="center_vertical"
+            android:text="@string/login_activity_txt_pass"/>
+
+        <EditText
+            android:id="@+id/edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_edt_height"
+            android:layout_marginBottom="@dimen/login_edt_mar_bot"
+            android:layout_marginLeft="@dimen/login_edt_margin"
+            android:layout_marginRight="@dimen/login_edt_margin"
+            android:background="@drawable/edt_login"
+            android:inputType="textPassword"
+            android:padding="@dimen/login_edt_padding"
+            android:textColor="@color/white"/>
+
+        <Button
+            style="@style/text_content"
+            android:layout_width="@dimen/login_btn_width"
+            android:layout_height="@dimen/login_btn_height"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_capture"
+            android:backgroundTint="@color/red_600"
+            android:onClick="logInOnclick"
+            android:text="@string/login_activity_btn_login"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_content"
+        android:layout_above="@+id/layout_logos"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/splash_txt_content_margin"
+        android:gravity="left"
+        android:text="@string/splash_activity_txt3"
+        android:textColor="@color/colorPrimary"/>
+
+    <ImageView
+        android:id="@+id/layout_logos"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/splash_imv_logo_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/splash_imv_logo_mar_bot"
+        android:layout_weight="2"
+        android:src="@mipmap/logo"/>
+</RelativeLayout>

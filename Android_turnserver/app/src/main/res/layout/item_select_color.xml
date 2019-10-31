@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:padding="@dimen/draw_spinner_padding">
+
+    <ImageView
+        android:id="@+id/imv_color"
+        android:layout_width="@dimen/draw_spinner_width"
+        android:layout_height="@dimen/draw_spinner_imv_height"
+        android:background="@drawable/spinner_bg"/>
+</LinearLayout>

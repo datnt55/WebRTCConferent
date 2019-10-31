@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[20170830] Ductx: #2584: Create layout for connect activity -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_contact"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/contact_ly_main_padding">
+
+    <ImageView
+        android:layout_width="@dimen/contact_imv_icon_size"
+        android:layout_height="@dimen/contact_imv_icon_size"
+        android:background="@drawable/circle"/>
+
+    <TextView
+        android:id="@+id/txt_name"
+        style="@style/text_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/contact_txt_name_mar_left"
+        android:gravity="center"
+        android:text="Name"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/imv_status"
+        android:layout_width="@dimen/connect_imv_online_size"
+        android:layout_height="@dimen/connect_imv_online_size"
+        android:layout_gravity="center|right"
+        android:layout_margin="@dimen/connect_imv_online_size"
+        android:background="@drawable/online"/>
+</FrameLayout>

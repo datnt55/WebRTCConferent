@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[20170609] Datnt: #2596: Create layout for edit screen -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:context="jp.co.miosys.aitec.activities.ImageViewActivity">
+
+    <include layout="@layout/layout_header"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_header"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:scrollbars="none"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_header"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/txt_datetime"
+            style="@style/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/white"
+            android:text="2017/12/31 14:40:22"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:padding="5dp"/>
+
+        <ImageView
+            android:layout_below="@+id/txt_datetime"
+            android:id="@+id/imv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"/>
+
+        <FrameLayout
+            android:layout_below="@+id/txt_datetime"
+            android:id="@+id/ly_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/image_btn_mar_bot"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txt_show_image"
+                style="@style/text_content"
+                android:layout_width="@dimen/image_btn_width"
+                android:layout_height="@dimen/image_btn_height"
+                android:background="@drawable/imv_show_image"
+                android:gravity="center"
+                android:onClick="onClickShowImage"
+                android:text="画像"/>
+
+            <TextView
+                android:id="@+id/txt_show_map"
+                style="@style/text_content"
+                android:layout_width="@dimen/image_btn_width"
+                android:layout_height="@dimen/image_btn_height"
+                android:background="@drawable/imv_show_map"
+                android:gravity="center"
+                android:onClick="onClickShowMap"
+                android:text="地図"/>
+            <TextView
+                android:id="@+id/btn_edit"
+                style="@style/text_content"
+                android:layout_width="@dimen/image_btn_width"
+                android:layout_height="@dimen/image_btn_height"
+                android:text="@string/edit_image"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/imv_edit_image" />
+        </TableRow>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_no_image"
+        style="@style/text_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_header"
+        android:layout_centerInParent="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="No image Here"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[20170829] Ductx: #2584: Create layout for call activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/black"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/layout_header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/fullscreen_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/button_call_switch_camera"
+            android:layout_width="@dimen/call_imb_flash_size"
+            android:layout_height="@dimen/call_imb_flash_size"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/call_imb_flash_margin"
+            android:background="@mipmap/imv_switch"/>
+        <ImageView
+            android:id="@+id/btn_grid_line"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/button_call_switch_camera"
+            android:padding="9dp"
+            android:src="@mipmap/btn_grid_off"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:onClick="enableGridLine" />
+        <TextView
+            android:id="@+id/txt_partner_loading"
+            style="@style/text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:text="Connecting..."/>
+        <TableRow
+            android:id="@+id/ly_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/call_imb_flash_margin">
+
+            <FrameLayout
+                android:layout_width="@dimen/connect_imv_user_size"
+                android:layout_height="@dimen/connect_imv_user_size">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle"/>
+
+                <ImageView
+                    android:layout_width="@dimen/connect_imv_online_size"
+                    android:layout_height="@dimen/connect_imv_online_size"
+                    android:layout_gravity="bottom|right"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="@color/green_200"/>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txt_user1"
+                style="@style/text_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="Mio"/>
+        </TableRow>
+
+        <TextView
+            android:id="@+id/txt_noti_patner_view_image"
+            style="@style/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:text="@string/call_activity_txt_noti"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/button_call_toggle_mic"
+                android:layout_width="@dimen/call_btn_switch_size"
+                android:layout_height="@dimen/call_btn_switch_size"
+                android:layout_margin="@dimen/call_btn_switch_margin"
+                android:background="@mipmap/voice_on"/>
+
+            <ImageButton
+                android:id="@+id/button_call_toggle_video"
+                android:layout_width="@dimen/call_btn_switch_size"
+                android:layout_height="@dimen/call_btn_switch_size"
+                android:layout_margin="@dimen/call_btn_switch_margin"
+                android:background="@mipmap/camera_on"/>
+        </TableRow>
+        <jp.co.miosys.aitec.views.widgets.GridLineView
+            android:id="@+id/layout_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-200dp"
+            android:layout_marginRight="-200dp"
+            android:layout_marginTop="-200dp"
+            android:visibility="gone"
+            android:layout_marginBottom="-200dp"/>
+        <jp.co.miosys.aitec.views.widgets.ProgressDialog
+            android:id="@+id/progress_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+        </jp.co.miosys.aitec.views.widgets.ProgressDialog>
+    </RelativeLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fullscreen_video_view"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/call_ly_res_margin"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_res240"
+                        style="@style/text_resolution"
+                        android:layout_weight="1"
+                        android:onClick="chooseResOnclick"
+                        android:text="320 x 240"/>
+
+                    <TextView
+                        android:id="@+id/txt_res480"
+                        style="@style/text_resolution"
+                        android:layout_weight="1"
+                        android:onClick="chooseResOnclick"
+                        android:text="640 x 480"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_res720"
+                        style="@style/text_resolution"
+                        android:layout_weight="1"
+                        android:onClick="chooseResOnclick"
+                        android:text="1280 x 720"/>
+
+                    <TextView
+                        android:id="@+id/txt_res1080"
+                        style="@style/text_resolution"
+                        android:layout_weight="1"
+                        android:onClick="chooseResOnclick"
+                        android:text="1920 x 1080"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txt_res1440"
+                        style="@style/text_resolution"
+                        android:layout_weight="1"
+                        android:onClick="chooseResOnclick"
+                        android:text="2560 x 1440"/>
+
+                    <TextView
+                        android:id="@+id/txt_res2160"
+                        style="@style/text_resolution"
+                        android:layout_weight="1"
+                        android:onClick="chooseResOnclick"
+                        android:text="3840 x 2160"/>
+                </TableRow>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_capture"
+                style="@style/text_title"
+                android:layout_width="@dimen/call_btn_capture_width"
+                android:layout_height="@dimen/call_btn_capture_height"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/call_btn_capture_margin"
+                android:layout_weight="2"
+                android:background="@drawable/btn_capture"
+                android:text="@string/call_activity_btn_capture"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/call_ly_res_margin"
+            android:layout_marginTop="@dimen/call_ly_res_margin"
+            android:layout_weight="5">
+            <org.webrtc.SurfaceViewRenderer
+                android:id="@+id/pip_video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/txt_user2"
+                style="@style/text_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Mio"/>
+
+        </FrameLayout>
+    </TableRow>
+</LinearLayout>

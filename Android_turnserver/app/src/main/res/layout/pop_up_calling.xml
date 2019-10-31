@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--[20170919] Ductx: #2664: Create layout for answer screen -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/black"
+              android:fitsSystemWindows="false"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/popup_ly_search_mar_top"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/bg_search"/>
+
+        <ImageView
+            android:id="@+id/img_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/circle_search"/>
+
+        <ImageView
+            android:id="@+id/img_circle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/circle_search"/>
+
+        <ImageView
+            android:id="@+id/img_call"
+            android:layout_width="@dimen/popup_imv_call_size"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_call_black_24dp"
+            android:tint="@color/white"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txt_name"
+            style="@style/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/join_a_conference_message"
+            android:textColor="@color/white"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/popup_ly_btn_margin"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/popup_btn_size"
+                android:layout_height="@dimen/popup_btn_size"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/btn_answer"/>
+
+            <TextView
+                android:id="@+id/txt_answer"
+                style="@style/text_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/popup_txt_mar_top"
+                android:text="@string/answer"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/popup_ly_btn_margin">
+
+            <ImageView
+                android:layout_width="@dimen/popup_btn_size"
+                android:layout_height="@dimen/popup_btn_size"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/btn_cancel"/>
+
+            <TextView
+                style="@style/text_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/popup_txt_mar_top"
+                android:text="@string/deny_call"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

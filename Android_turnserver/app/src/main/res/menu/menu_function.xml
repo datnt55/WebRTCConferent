@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--<item android:id="@+id/one_tec"-->
+        <!--android:title="ひとりTEC"  />-->
+    <item android:id="@+id/voice_memo"
+        android:title="音声メモ" />
+    <item android:id="@+id/alert_list"
+        android:title="アラート受信リスト" />
+    <item android:id="@+id/setting"
+        android:title="設定" />
+</menu>
